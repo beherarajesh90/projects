@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
-
+//change the url
+const url='';
 mongoose
-  .connect(
-    'mongodb+srv://admin:admin@cluster0.oapxe.mongodb.net/todo-db?retryWrites=true&w=majority'
-  )
+  .connect(url)
   .then(() => {
     console.log('connected to mongo db');
   })
