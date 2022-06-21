@@ -1,0 +1,97 @@
+/* Dropdown container */
+
+.container {
+  height: 250px;
+  width: 350px;
+  border: 1px solid grey;
+  margin: 150px auto;
+  background-color: lightblue;
+  text-align: center;
+}
+
+/* dropdown_list_container */
+
+.dropdown_list_container {
+  width: 150px;
+  height: auto;
+  margin: auto;
+  padding: 5px;
+  border-radius: 5px;
+  /* overflow: hidden; */
+}
+
+/* dropdown button */
+
+#btn {
+  /* background-color: aquamarine; */
+  width: 100%;
+  border: none;
+  padding: 10px 15px;
+  /* border-radius: 5px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* on hover change button background color */
+#btn:hover {
+  background-color: rgb(117, 215, 117);
+}
+/*arrow icon*/
+#btn img {
+  animation: arrowDownOnHoverOut 500ms;
+}
+/* on hover rotate image */
+.dropdown_list_container:hover #btn img {
+  animation: arrowUpOnHover 500ms both;
+}
+/*rotate the arrow upwards */
+@keyframes arrowUpOnHover {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+/*rotate the arrow downwards */
+@keyframes arrowDownOnHoverOut {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* dropdown list */
+.dropdown_list {
+  display: block;
+  width: 100%;
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.dropdown_list li {
+  padding: 7px;
+}
+.dropdown_list li:hover {
+  background-color: rgb(117, 215, 117);
+}
+
+/*animation for dropdown list items*/
+.list_items_enter {
+  height: 0px;
+}
+.list_items_enter_active {
+  height: 105px;
+  transition: 500ms ease;
+}
+.list_items_exit {
+  height: 105px;
+}
+.list_items_exit_active {
+  height: 0;
+  transition: 500ms ease;
+}
